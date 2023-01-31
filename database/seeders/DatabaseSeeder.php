@@ -1,0 +1,32 @@
+<?php
+
+namespace Database\Seeders;
+// use report seeder
+use Database\Seeders\ReportSeeder;
+// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+// use seeder user
+use App\Models\User;
+use Database\Seeders\UserSeeder;
+
+
+
+class DatabaseSeeder extends Seeder
+{
+    /**
+     * Seed the application's database.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        // \App\Models\User::factory(10)->create();
+
+        // \App\Models\User::factory()->create([
+        //     'name' => 'Test User',
+        //     'email' => 'test@example.com',
+        // ]);
+       $this->call(ReportSeeder::class);
+       $this->call(UserSeeder::class);
+    }
+}
